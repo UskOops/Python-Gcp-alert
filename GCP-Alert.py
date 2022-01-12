@@ -1,11 +1,13 @@
 from google.cloud import bigquery
 import pandas as pd
 import numpy as np
-google_in=bigquery("Your GCP acess key","your Google Associate Tag,"US")
+#google_in=bigquery("Your GCP acess key","your Google Associate Tag,"US") preciso corrigir esse erro
+#query="SELECT * FROM `bigquery-public-data`"
 
 
 product=google_in.query("select * from `Your BigQuery Table`")
-#df=pd.DataFrame(product)
+df=pd.DataFrame(product)
+df.columns=['Product','Date','Value']
 
 
 def send_email(title,no-value):
